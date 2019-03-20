@@ -5,11 +5,11 @@
 COIN_NAME='hush'
 
 #current wallet version found @https://bootstrap.0x03.services/hush-binaries/
-WALLET_DOWNLOAD='https://bootstrap.0x03.services/hush-binaries/v2.0.0.tar.gz'
+WALLET_DOWNLOAD='https://bootstrap.0x03.services/hush-binaries/bin-linux-x64.tar.gz'
 FETCHPARAMS='https://raw.githubusercontent.com/MyHush/hush/master/zcutil/fetch-params.sh'
 WALLET_BOOTSTRAP='https://bootstrap.0x03.services/hush/HUSH-bootstrap.tar.gz'
 BOOTSTRAP_TAR_FILE='HUSH-bootstrap.tar.gz'
-WALLET_TAR_FILE='v2.0.0.tar.gz'
+WALLET_TAR_FILE='bin-linux-x64.tar.gz'
 ZIPTAR='unzip'
 CONFIG_FILE='hush.conf'
 RPCPORT=8888
@@ -129,6 +129,8 @@ fi
     echo "addnode=dnsseed2.myhush.org" >> ~/.hush/$CONFIG_FILE
     echo "addnode=dnsseed.bleuzero.com" >> ~/.hush/$CONFIG_FILE
     echo "addnode=dnsseed.hush.quebec" >> ~/.hush/$CONFIG_FILE
+    echo "addnode=stilgar.myhush.org" >> ~/.hush/$CONFIG_FILE
+    echo "addnode=139.99.144.122" >> ~/.hush/$CONFIG_FILE
     echo "maxconnections=256" >> ~/.hush/$CONFIG_FILE
 
 sleep 3
@@ -151,15 +153,15 @@ echo -e
 
 #..............................................................................................................this needs update!
 
-: '
-echo -e '\033[1;33m===============================================================================\033[0m'
-echo -e 'DOWNLOAD WALLET BOOTSTRAP'
-echo -e '\033[1;33m===============================================================================\033[0m'
-wget -U Mozilla/5.0 $WALLET_BOOTSTRAP
-unzip -o $BOOTSTRAP_TAR_FILE -d /home/$USERNAME/.hush
-rm -rf $BOOTSTRAP_TAR_FILE
-echo -e
-'
+#: '
+#echo -e '\033[1;33m===============================================================================\033[0m'
+#echo -e 'DOWNLOAD WALLET BOOTSTRAP'
+#echo -e '\033[1;33m===============================================================================\033[0m'
+#wget -U Mozilla/5.0 $WALLET_BOOTSTRAP
+#unzip -o $BOOTSTRAP_TAR_FILE -d /home/$USERNAME/.hush
+#rm -rf $BOOTSTRAP_TAR_FILE
+#echo -e
+#'
 #................................................................................................................this is a test!
 echo -e '\033[1;33m===============================================================================\033[0m'
 echo -e 'DOWNLOAD WALLET BOOTSTRAP'
@@ -167,8 +169,6 @@ echo -e '\033[1;33m=============================================================
 wget -U Mozilla/5.0 $WALLET_BOOTSTRAP -O - | sudo tar -xz &> /dev/null
 rm -rf $BOOTSTRAP_TAR_FILE
 echo -e
-
-
 
 echo -e '\033[1;33m===============================================================================\033[0m'
 echo -e 'DOWNLOAD CHAIN PARAMS'
